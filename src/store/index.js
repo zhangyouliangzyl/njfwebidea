@@ -1,12 +1,10 @@
 import { createStore } from 'vuex'
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    state: {
+        test: "可以"
+    },
+    mutations: {},
+    actions: {},
+    modules: {}
 })
