@@ -22,8 +22,6 @@
 // }
 
 module.exports = {
-
-    // assetsDir: 'static',
     parallel: false,
     publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
     outputDir: 'dist', //build输出目录
@@ -37,14 +35,11 @@ module.exports = {
         hotOnly: false, //是否开启热更新
         proxy: {
             '/api': {
-                target: 'https://app.njf2016.com/njf', //API服务器的地址
+                target: 'https://app.njf2016.com/njf', //API服务器的地址  https://app.njf2016.com/njf   https://app.njf2016.com:8888/njf
                 ws: true, //代理websockets
                 changeOrigin: true, // 是否跨域，虚拟的站点需要更管origin
                 pathRewrite: {
-                    // '^/api5'是一个正则表达式，表示要匹配请求的url中，全部'http://localhost:8081/api5' 转接为 http://localhost:8081/api/
-                    '^/api5': '/api',
-                    //重写路径 比如'/api/aaa/ccc'重写为'/aaa/ccc'
-                    '^/api': '',
+                    '^/api': ''
                 }
             }
         },

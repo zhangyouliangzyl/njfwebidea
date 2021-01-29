@@ -13,7 +13,8 @@ axios.interceptors.response.use(res => {
     //     Toast.fail('服务端异常！')
     //     return Promise.reject(res)
     // }
-    // console.log("res = ", res);
+
+    // console.log("process.env.NODE_ENV == ", process.env.NODE_ENV);
     return res.data
 })
 

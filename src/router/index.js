@@ -1,19 +1,62 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import home from '../views/Home.vue'
+import message from '../views/message.vue'
+import car from '../views/car.vue'
+import user from '../views/user.vue'
+import about from '../views/about.vue'
+import GoodsDetails from '../views/GoodsDetails.vue'
 
 const routes = [{
         path: '/',
-        name: 'Home',
-        component: Home
+        redirect: '/home'
+    },
+    {
+        path: '/home',
+        name: 'home',
+        component: home,
+        meta: {
+            title: "首页"
+        }
+    },
+    {
+        path: '/message',
+        name: 'message',
+        component: message,
+        meta: {
+            title: "消息"
+        }
+    },
+    {
+        path: '/car',
+        name: 'car',
+        component: car,
+        meta: {
+            title: "购物车"
+        }
+    },
+    {
+        path: '/user',
+        name: 'user',
+        component: user,
+        meta: {
+            title: "我的"
+        }
+    },
+    {
+        path: '/GoodsDetails',
+        name: 'GoodsDetails',
+        component: GoodsDetails,
+        meta: {
+            title: "商品详情"
+        }
     },
     {
         path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import ( /* webpackChunkName: "about" */ '../views/About.vue')
+        name: 'about',
+        component: about,
+        meta: {
+            title: "关于"
+        }
     }
 ]
 
